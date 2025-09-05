@@ -15,12 +15,12 @@ CREATE TABLE users (
 	-- id(社員ID):主キー
 	uid serial PRiMARY KEY,
 	-- name(社員名):NULL不許可
-	ename varchar(255) NOT NULL,
-	employee_no INTEGER NOT NULL,
+	name varchar(255) NOT NULL,
+	employee_no varchar(50) NOT NULL,
 	email varchar(255),
 	password_hash varchar(255) NOT NULL,
 	enabled boolean,
-	did INTEGER
+	department_id INTEGER
 );
 
 CREATE TABLE departments (
