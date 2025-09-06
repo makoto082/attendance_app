@@ -12,7 +12,11 @@ values
 -- 1人目の管理者社員登録
 
 
+
+
 -- 管理者アカウント登録
+
+
 
 -- テスト太郎の勤怠登録
 insert into attendance_entries (header_id , work_date, clock_in, clock_out, break_minutes, location, total_minutes, overtime_minutes, night_minutes, holiday_minutes, remark)
