@@ -2,26 +2,36 @@ package com.attendanceapp.attendance.entity;
 
 import java.time.LocalDate;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-@Data
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class AttendanceHeader {
 	/** 勤怠ID */
-	int ahid;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int ahid;
 	/** ユーザーID*/
-	int user_id;
+	private int user_id;
 	/** 年月　*/
-	LocalDate year_month;
+	private LocalDate year_month;
 	/** ステータス */
-	String status;
+	private String status;
 	/** 入力日時 */
-	LocalDate submitted_at;
+	private LocalDate submitted_at;
 	/** 承認日時 */
-	LocalDate approved_at;
+	private LocalDate approved_at;
 	/** 承認者ID */
-	int approver_id;
+	private int approver_id;
 }

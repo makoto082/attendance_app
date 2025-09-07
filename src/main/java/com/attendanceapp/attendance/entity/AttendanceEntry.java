@@ -2,36 +2,48 @@ package com.attendanceapp.attendance.entity;
 
 import java.time.LocalDate;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-@Data
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class AttendanceEntry {
 	/** 勤怠詳細ID */
-	int aeid;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int aeid;
 	/** 勤怠ID */
-	int header_id;
+	@Column(nullable = false, unique = true)
+	private int header_id;
 	/** 出勤日時 */
-	LocalDate work_date;
+	private LocalDate work_date;
 	/** 出勤時間 */
-	LocalDate clock_in;
+	private LocalDate clock_in;
 	/** 退勤時間 */
-	LocalDate clock_out;
+	private LocalDate clock_out;
 	/** 休憩時間 */
-	LocalDate break_minutes;
+	private LocalDate break_minutes;
 	/** 勤務場所 */
-	String location;
+	private String location;
 	/** 勤務時間 */
-	LocalDate total_minutes;
+	private LocalDate total_minutes;
 	/** 残業時間 */
-	LocalDate overtime_minutes;
+	private LocalDate overtime_minutes;
 	/** 深夜勤務時間 */
-	LocalDate night_minutes;
+	private LocalDate night_minutes;
 	/** 休日勤務時間 */
-	LocalDate holiday_minutes;
+	private LocalDate holiday_minutes;
 	/** 備考 */
-	String remark;
+	private String remark;
 }

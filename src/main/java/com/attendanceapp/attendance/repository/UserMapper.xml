@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.attendanceapp.attendance.repository.UserMapper">
-	<select id="selectUser" resultType="com.attendanceapp.attendance.entity.User">
-		select employee_no, name, email department_id from users where employee_no = #{employee_no}
-	</select>
-	
-</mapper>
