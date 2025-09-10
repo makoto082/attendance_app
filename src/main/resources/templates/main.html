@@ -2,12 +2,28 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>勤怠登録画面</title>
+<title>勤怠記録画面</title>
 </head>
 <body>
-	<h2>勤怠登録</h2>
+	<h2>勤怠記録</h2>
 	<p>さん、こんにちは</p>
-	
+	<table border="1">
+		<thead>
+			<tr>
+				<th>日付</th>
+				<th>勤務開始時間</th>
+				<th>勤務終了時間</th>
+				<th>残業時間</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+				<td>勤怠登録</td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
 	<a th:href="@{/maintenance}">管理画面を開く</a>
 </body>
 </html>

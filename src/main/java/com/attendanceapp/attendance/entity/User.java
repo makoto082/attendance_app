@@ -22,19 +22,24 @@ public class User {
 	/** ID */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "uid")
 	private Long uid;
 	/** 社員番号 */
-	@Column(nullable = false, unique = true)
-	private String employee_no;
+	@Column(name = "employee_no", nullable = false, unique = true)
+	private String employeeNo;
 	/** 社員名 */
-	@Column(nullable = false)
+	@Column(name = "name", nullable = false)
 	private String name;
 	/** 社員メールアドレス */
+	@Column(name = "email")
 	private String email;
 	/** パスワードハッシュ */
-	private String password_hash;
+	@Column(name = "passwor_hash")
+	private String passwordHash;
 	/** 在籍フラグ */
-	private boolean enabled;
+	@Column(name = "enabled")
+	private boolean enabled = true;
 	/** 部署ID */
-	private String department_id;
+	@Column(name = "department_id")
+	private String departmentId;
 }

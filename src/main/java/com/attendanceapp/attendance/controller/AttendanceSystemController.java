@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AttendanceSystemController {
-	/** DI */
 	
 	// 勤怠登録画面表示
 	@GetMapping("/")
